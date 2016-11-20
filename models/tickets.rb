@@ -19,7 +19,7 @@ class Ticket
     "INSERT INTO tickets 
     (customer_id, film_id)
     VALUES
-    ('#{@customer_id}', '#{@film_id}') RETURNING *;"
+    (#{@customer_id}, #{@film_id}) RETURNING *;"
     result = SqlRunner.run(sql) 
     @id = result[0]['id'].to_i 
   end 
