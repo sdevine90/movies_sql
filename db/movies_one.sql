@@ -20,3 +20,5 @@ customer_id INT8 references customers(id),
 film_id INT8 references films(id)
 );
 
+-- UPDATE films SET title = "Finding Dory"
+-- WHERE id =2;

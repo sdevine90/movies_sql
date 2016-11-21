@@ -29,4 +29,18 @@ class Film
     return films.map { |films| Film.new(films) }
   end
 
+  def update
+    sql = 
+    "UPDATE films
+    SET (title, price) = 
+    ('#{@title}', #{@price}) WHERE id =#{@id};" #where id picks just one
+    SqlRunner.run(sql)
+  end
+
+
+  def self.delete_all() 
+    sql = "DELETE FROM films"
+    SqlRunner.run(sql)
+  end
+
 end
